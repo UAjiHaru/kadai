@@ -1,0 +1,19 @@
+\begin{thebibliography}{1}
+
+\bibitem{translate}
+萩原正人.
+\newblock 単語を箱で表現！新たな埋め込み手法 {B}ox {E}mbedding を基礎から理解.
+\newblock \url{https://ja.stateofaiguides.com/20221013-box-embeddings/}, 10
+  2022.
+\newblock (Accessed on 11/29/2022).
+
+\bibitem{dasgupta-etal-2022-word2box}
+Shib Dasgupta, Michael Boratko, Siddhartha Mishra, Shriya Atmakuri, Dhruvesh
+  Patel, Xiang Li, and Andrew McCallum.
+\newblock {W}ord2{B}ox: Capturing set-theoretic semantics of words using box
+  embeddings.
+\newblock In {\em Proceedings of the 60th Annual Meeting of the Association for
+  Computational Linguistics (Volume 1: Long Papers)}, pp. 2263--2276, Dublin,
+  Ireland, May 2022. Association for Computational Linguistics.
+
+\end{thebibliography}
