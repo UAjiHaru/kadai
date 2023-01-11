@@ -63,6 +63,10 @@
 
 \section{要素技術}
 \subsection{Box Embedding}
+Box Embedding はデータを d 次元のベクトルの組からなる「箱」で単語を表現するというものであり, (Box Lattice のやつを示す)で提案された.
+Box Embedding は「箱」の重なりを調整することで表現を獲得するが, (Box Lattice の作者)らによって提案された方法では「箱」が重ならないと最適化が難しくなる問題がある.
+この問題に対して「箱」の境界を滑らかにすることで
+
 \subsection{Word2Vec}
 Word2Vec は 2013 年に Google の Tomas Mikolov らによって発表された単語のベクトル埋め込み表現の生成モデルである. 
 Word2Vec は 2 層ニューラルネットワークであり, 対象とする単語の周辺に現れる単語の頻度をもとに類似する周辺単語を持つ単語との
