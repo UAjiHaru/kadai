@@ -86,11 +86,55 @@ Word2Box\cite{dasgupta-etal-2022-word2box} は Sankar Dasgupta らによって�
 Penn Treebank データセットは
 
 \subsection{単語類似度データセット}
-\subsubsection{title}
+\subsubsection{SimLex-999}
+\subsubsection{WordSim-353}
+\subsubsection{YP-130}
+\subsubsection{MEN}
+\subsubsection{MC-30}
+\subsubsection{RG-65}
+\subsubsection{VERB-143}
+\subsubsection{Stanford RW}
+\subsubsection{Mturk-287}
+\subsubsection{Mturk-771}
 
 \section{実験}
-Word2Box の著者による実装を用いて表のパラメータで単語の埋め込みモデルを獲得
-各単語類似度データセットをもとに類似度の高い単語の組について
+Word2Box の著者による実装 \url{https://github.com/iesl/word2box} を用いて表 \ref{tb:model_parameter}のパラメータで単語の埋め込みモデルを獲得をした. 
+各単語類似度データセットをもとに類似度の高い単語の組について埋め込み表現同士での類似度を計算し, 学習した語彙の中で何番目に位置するかを求めた. 
+各類似度データセットは数値の基準がそれぞれ異なるため, 表 \ref{tb:dataset_detail} に示す基準値を上回る単語組を実験に用いた. 
+ただし, 基準値は各データセットの類似度の最大値の 80 \% としている. 
+
+\begin{table}[t]
+  \centering
+  \caption{Word2Box モデルの学習パラメータ}
+  \label{tb:model_parameter}
+  \begin{tabular}{|c|c|} \hline
+      parameter&value \\ \hline
+      次元数&64 \\
+      バッチサイズ&4096 \\ 
+      エポック数&10 \\
+      ウィンドウサイズ&5 \\
+      ネガティブサンプル数&2 \\
+      サブサンプル閾値&0.001 \\
+      学習率&0.004204091643267762 \\
+      \hline
+  \end{tabular}
+\end{table}
+
+
+\begin{table*}[t]
+  \centering
+  \caption{Word2Box モデルの学習パラメータ}
+  \label{tb:dataset_detail}
+  \scalebox{0.8}[0.8]{
+  \begin{tabular}{|c||c|c|c|c|c|c|c|c|c|c|} \hline
+      項目&SimLex-999&WordSim-353&YP-130&MEN&MC-30&RG-65&VERB-143&Stanford RW&Mturk-287&Mturk-771 \\ \hline \hline
+      基準値&8&8&3.2&40&3.2&3.2&3.2&8&4&4 \\ \hline
+      該当組数& \\
+      \hline
+  \end{tabular}
+  }
+\end{table*}
+
 
 \section{結果と考察}
 
