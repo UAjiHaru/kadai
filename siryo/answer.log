@@ -1,12 +1,12 @@
-This is e-pTeX, Version 3.141592653-p4.0.0-220214-2.6 (utf8.sjis) (TeX Live 2022) (preloaded format=platex 2022.12.4)  13 JAN 2023 10:42
+This is e-pTeX, Version 3.141592653-p4.0.0-220214-2.6 (utf8.sjis) (TeX Live 2022) (preloaded format=platex 2022.12.4)  13 JAN 2023 21:45
 entering extended mode
  restricted \write18 enabled.
- file:line:error style messages enabled.
  %&-line parsing enabled.
-**c:/Users/AjiokaHaruki/workspace/kadai/資料/answer.tex
-(c:/Users/AjiokaHaruki/workspace/kadai/資料/answer.tex
+**answer.tex
+(./answer.tex
 pLaTeX2e <2021-11-15> (based on LaTeX2e <2022-11-01> patch level 1)
-L3 programming layer <2022-11-02> (c:/texlive/2022/texmf-dist/tex/platex/base/jarticle.cls
+L3 programming layer <2022-11-02>
+(c:/texlive/2022/texmf-dist/tex/platex/base/jarticle.cls
 Document Class: jarticle 2020/09/30 v1.8f Standard pLaTeX class
 \c@@paper=\count184
 (c:/texlive/2022/texmf-dist/tex/platex/base/jsize10.clo
@@ -29,28 +29,36 @@ LaTeX Font Info:    Overwriting symbol font `mincho' in version `bold'
 \@lnumwidth=\dimen157
 \bibindent=\dimen158
 \heisei=\count193
-) (c:/texlive/2022/texmf-dist/tex/latex/graphics/graphicx.sty
+)
+(c:/texlive/2022/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+
 (c:/texlive/2022/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
 \KV@toks@=\toks17
-) (c:/texlive/2022/texmf-dist/tex/latex/graphics/graphics.sty
+)
+(c:/texlive/2022/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
+
 (c:/texlive/2022/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
-) (c:/texlive/2022/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+)
+(c:/texlive/2022/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: dvipdfmx.def on input line 107.
+
 (c:/texlive/2022/texmf-dist/tex/latex/graphics-def/dvipdfmx.def
 File: dvipdfmx.def 2022/09/22 v5.0m Graphics/color driver for dvipdfmx
 ))
 \Gin@req@height=\dimen159
 \Gin@req@width=\dimen160
-) (c:/texlive/2022/texmf-dist/tex/latex/url/url.sty
+)
+(c:/texlive/2022/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip16
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
-) (c:/texlive/2022/texmf-dist/tex/latex/l3backend/l3backend-dvips.def
+)
+(c:/texlive/2022/texmf-dist/tex/latex/l3backend/l3backend-dvips.def
 File: l3backend-dvips.def 2022-10-26 L3 backend support: dvips
 \l__pdf_internal_box=\box68
 \g__pdf_backend_object_int=\count194
@@ -59,7 +67,8 @@ File: l3backend-dvips.def 2022-10-26 L3 backend support: dvips
 \g__pdf_backend_annotation_int=\count195
 \g__pdf_backend_link_int=\count196
 \g__pdf_backend_link_sf_int=\count197
-) (out/answer.aux)
+)
+(./answer.aux)
 \openout1 = `answer.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 35.
@@ -85,30 +94,33 @@ LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <14.4> not available
 LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <14.4> not available
 (Font)              Font shape `JY1/gt/m/n' tried instead on input line 52.
 LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <12> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 65.
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 67.
 LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <12> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 65.
-(./answer.bbl
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 67.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 82.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 82.
+LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <10> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 89.
+LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <10> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 89.
+ (./answer.bbl [1
+
+
+]
 LaTeX Font Info:    Kanji font shape `JY1/gt/m/it' undefined
-(Font)              No change on input line 8.
+(Font)              No change on input line 6.
+) [2
 
-Underfull \hbox (badness 1694) in paragraph at lines 4--11
-[]\OT1/cmr/m/n/10 Shib Das-gupta, Michael Bo-ratko, Sid-dhartha
- []
-
-[1
-
-
-]) [2
-
-] (out/answer.aux) ) 
+] (./answer.aux) ) 
 Here is how much of TeX's memory you used:
- 1035 strings out of 475427
- 17434 string characters out of 5791344
+ 1040 strings out of 475427
+ 17319 string characters out of 5791344
  378571 words of memory out of 5000000
- 22815 multiletter control sequences out of 15000+600000
- 475612 words of font info for 54 fonts, out of 8000000 for 9000
+ 22821 multiletter control sequences out of 15000+600000
+ 476088 words of font info for 56 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
- 55i,5n,62p,311b,274s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 55i,5n,62p,219b,246s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on out/answer.dvi (2 pages, 6904 bytes).
+Output written on answer.dvi (2 pages, 7216 bytes).

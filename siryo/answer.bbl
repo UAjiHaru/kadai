@@ -1,0 +1,8 @@
+\begin{thebibliography}{1}
+
+\bibitem{word2vec}
+Tomas {Mikolov}, Kai {Chen}, Greg {Corrado}, and Jeffrey {Dean}.
+\newblock {Efficient Estimation of Word Representations in Vector Space}.
+\newblock {\em arXiv e-prints}, p. arXiv:1301.3781, January 2013.
+
+\end{thebibliography}

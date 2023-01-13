@@ -1,0 +1,103 @@
+@inproceedings{box-lattice,
+    title = "Probabilistic Embedding of Knowledge Graphs with Box Lattice Measures",
+    author = "Vilnis, Luke  and
+      Li, Xiang  and
+      Murty, Shikhar  and
+      McCallum, Andrew",
+    booktitle = "Proceedings of the 56th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    month = jul,
+    year = "2018",
+    address = "Melbourne, Australia",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/P18-1025",
+    doi = "10.18653/v1/P18-1025",
+    pages = "263--272",
+    abstract = "Embedding methods which enforce a partial order or lattice structure over the concept space, such as Order Embeddings (OE), are a natural way to model transitive relational data (e.g. entailment graphs). However, OE learns a deterministic knowledge base, limiting expressiveness of queries and the ability to use uncertainty for both prediction and learning (e.g. learning from expectations). Probabilistic extensions of OE have provided the ability to somewhat calibrate these denotational probabilities while retaining the consistency and inductive bias of ordered models, but lack the ability to model the negative correlations found in real-world knowledge. In this work we show that a broad class of models that assign probability measures to OE can never capture negative correlation, which motivates our construction of a novel box lattice and accompanying probability measure to capture anti-correlation and even disjoint concepts, while still providing the benefits of probabilistic modeling, such as the ability to perform rich joint and conditional queries over arbitrary sets of concepts, and both learning from and predicting calibrated uncertainty. We show improvements over previous approaches in modeling the Flickr and WordNet entailment graphs, and investigate the power of the model.",
+}
+
+@ARTICLE{gumbel-box,
+       author = {{Sankar Dasgupta}, Shib and {Boratko}, Michael and {Zhang}, Dongxu and {Vilnis}, Luke and {Li}, Xiang Lorraine and {McCallum}, Andrew},
+        title = "{Improving Local Identifiability in Probabilistic Box Embeddings}",
+      journal = {arXiv e-prints},
+     keywords = {Computer Science - Machine Learning, Computer Science - Artificial Intelligence, Statistics - Machine Learning},
+         year = 2020,
+        month = oct,
+          eid = {arXiv:2010.04831},
+        pages = {arXiv:2010.04831},
+archivePrefix = {arXiv},
+       eprint = {2010.04831},
+ primaryClass = {cs.LG},
+       adsurl = {https://ui.adsabs.harvard.edu/abs/2020arXiv201004831S},
+      adsnote = {Provided by the SAO/NASA Astrophysics Data System}
+}
+
+@inproceedings{dasgupta-etal-2022-word2box,
+    title = "{W}ord2{B}ox: Capturing Set-Theoretic Semantics of Words using Box Embeddings",
+    author = "Dasgupta, Shib  and
+      Boratko, Michael  and
+      Mishra, Siddhartha  and
+      Atmakuri, Shriya  and
+      Patel, Dhruvesh  and
+      Li, Xiang  and
+      McCallum, Andrew",
+    booktitle = "Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    month = may,
+    year = "2022",
+    address = "Dublin, Ireland",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2022.acl-long.161",
+    doi = "10.18653/v1/2022.acl-long.161",
+    pages = "2263--2276",
+    abstract = "Learning representations of words in a continuous space is perhaps the most fundamental task in NLP, however words interact in ways much richer than vector dot product similarity can provide. Many relationships between words can be expressed set-theoretically, for example, adjective-noun compounds (eg. {``}red cars{''}⊆{``}cars{''}) and homographs (eg. {``}tongue{''}∩{``}body{''} should be similar to {``}mouth{''}, while {``}tongue{''}∩{``}language{''} should be similar to {``}dialect{''}) have natural set-theoretic interpretations. Box embeddings are a novel region-based representation which provide the capability to perform these set-theoretic operations. In this work, we provide a fuzzy-set interpretation of box embeddings, and learn box representations of words using a set-theoretic training objective. We demonstrate improved performance on various word similarity tasks, particularly on less common words, and perform a quantitative and qualitative analysis exploring the additional unique expressivity provided by Word2Box.",
+}
+
+@ARTICLE{word2vec,
+       author = {{Mikolov}, Tomas and {Chen}, Kai and {Corrado}, Greg and {Dean}, Jeffrey},
+        title = "{Efficient Estimation of Word Representations in Vector Space}",
+      journal = {arXiv e-prints},
+     keywords = {Computer Science - Computation and Language},
+         year = 2013,
+        month = jan,
+          eid = {arXiv:1301.3781},
+        pages = {arXiv:1301.3781},
+archivePrefix = {arXiv},
+       eprint = {1301.3781},
+ primaryClass = {cs.CL},
+       adsurl = {https://ui.adsabs.harvard.edu/abs/2013arXiv1301.3781M},
+      adsnote = {Provided by the SAO/NASA Astrophysics Data System}
+}
+
+@article{simlex999,
+    title = "{S}im{L}ex-999: Evaluating Semantic Models With (Genuine) Similarity Estimation",
+    author = "Hill, Felix  and
+      Reichart, Roi  and
+      Korhonen, Anna",
+    journal = "Computational Linguistics",
+    volume = "41",
+    number = "4",
+    month = dec,
+    year = "2015",
+    address = "Cambridge, MA",
+    publisher = "MIT Press",
+    url = "https://aclanthology.org/J15-4004",
+    doi = "10.1162/COLI_a_00237",
+    pages = "665--695",
+}
+
+@inproceedings{wordsim353,
+author = {Finkelstein, Lev and Gabrilovich, Evgeniy and Matias, Yossi and Rivlin, Ehud and Solan, Zach and Wolfman, Gadi and Ruppin, Eytan},
+title = {Placing Search in Context: The Concept Revisited},
+year = {2001},
+isbn = {1581133480},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/371920.372094},
+doi = {10.1145/371920.372094},
+booktitle = {Proceedings of the 10th International Conference on World Wide Web},
+pages = {406–414},
+numpages = {9},
+keywords = {invisible web, search, statistical natural language processing, semantic processing, context},
+location = {Hong Kong, Hong Kong},
+series = {WWW '01}
+}
+

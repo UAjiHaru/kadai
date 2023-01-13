@@ -1,8 +1,8 @@
-PWD c:/Users/AjiokaHaruki/workspace/kadai/Ž‘—¿
+PWD c:/Users/AjiokaHaruki/workspace/kadai/siryo
 INPUT c:/texlive/2022/texmf.cnf
 INPUT c:/texlive/2022/texmf-dist/web2c/texmf.cnf
 INPUT c:/texlive/2022/texmf-var/web2c/eptex/platex.fmt
-INPUT c:/Users/AjiokaHaruki/workspace/kadai/Ž‘—¿/answer.tex
+INPUT c:/Users/AjiokaHaruki/workspace/kadai/siryo/answer.tex
 OUTPUT out/answer.log
 INPUT c:/texlive/2022/texmf-dist/tex/platex/base/jarticle.cls
 INPUT c:/texlive/2022/texmf-dist/tex/platex/base/jarticle.cls
@@ -108,10 +108,12 @@ INPUT c:/texlive/2022/texmf-dist/fonts/tfm/ptex-fonts/standard/goth10.tfm
 INPUT c:/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 INPUT c:/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
 INPUT c:/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
+INPUT c:/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
+INPUT c:/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmtt10.tfm
 INPUT ./answer.bbl
 INPUT answer.bbl
 INPUT ./answer.bbl
 INPUT answer.bbl
-INPUT c:/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmti10.tfm
 OUTPUT out/answer.dvi
+INPUT c:/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmti10.tfm
 INPUT out/answer.aux
