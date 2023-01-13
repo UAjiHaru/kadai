@@ -1,42 +1,45 @@
-# Fdb version 3
-["bibtex answer"] 1669796116 "answer.aux" "answer.bbl" "answer" 1673410550
-  "answer.aux" 1669777443 891 58c7af251209aa353001388d3eed6962 ""
-  "index.bib" 1669777307 2102 6029dbb98bde734496a94636b7e8b0ec ""
+# Fdb version 4
+["bibtex answer"] 1673511631 "answer.aux" "answer.bbl" "answer" 1673574143 0
+  "./index.bib" 1673446312 2102 95b6b0caa3e2fd985eccacc040f91020 ""
+  "answer.aux" 1673446312 904 58c7af251209aa353001388d3eed6962 ""
   "junsrt.bst" 0 -1 0 ""
   (generated)
   "answer.bbl"
   "answer.blg"
-["dvipdf"] 1673409444 "out/answer.dvi" "out/answer.pdf" "out/answer" 1673410550
-  "out/answer.dvi" 1673409444 7032 5fe1911872e97ff9138e0cc175aeaa71 "latex"
+  (rewritten before read)
+["dvipdf"] 1673574142 "out/answer.dvi" "out/answer.pdf" "out/answer" 1673574143 0
+  "out/answer.dvi" 1673574141 6904 134a3c2f5cc798735d9400490ced5e45 "latex"
   (generated)
   "out/answer.pdf"
-["latex"] 1673409444 "/home/ajioka/enshu2/kadai/資料/answer.tex" "out/answer.dvi" "answer" 1673410550
-  "/etc/texmf/web2c/texmf.cnf" 1666850951 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/ajioka/enshu2/kadai/資料/answer.tex" 1673410550 5344 9344d3632955ad8fac92852d3a03679d ""
-  "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
-  "/usr/share/texlive/texmf-dist/fonts/tfm/ptex-fonts/standard/goth10.tfm" 1463434352 1196 5981e79c37b2cfd27b3612a6783cd4b6 ""
-  "/usr/share/texlive/texmf-dist/fonts/tfm/ptex-fonts/standard/min10.tfm" 1463434352 1196 1be730212205a270378fba11a44765dc ""
-  "/usr/share/texlive/texmf-dist/fonts/tfm/ptex-fonts/standard/tgoth10.tfm" 1463434352 856 7404843a5f798859944d7973a47821d5 ""
-  "/usr/share/texlive/texmf-dist/fonts/tfm/ptex-fonts/standard/tmin10.tfm" 1463434352 856 39c171483fe1bb7d0e1368980c0c205b ""
-  "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm" 1136768653 1324 c910af8c371558dc20f2d7822f66fe64 ""
-  "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr12.tfm" 1136768653 1288 655e228510b4c2a1abe905c368440826 ""
-  "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmti10.tfm" 1136768653 1480 aa8e34af0eb6a2941b776984cf1dfdc4 ""
-  "/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg" 1465944070 1224 978390e9c2234eab29404bc21b268d1e ""
-  "/usr/share/texlive/texmf-dist/tex/latex/graphics-def/dvipdfmx.def" 1498427493 10299 c742d2190e924996d2f4e34b541cd5e3 ""
-  "/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty" 1580683321 16932 04729abe63b66ec59ea56edcd722b058 ""
-  "/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty" 1580683321 9067 1b996612394a52e1efe89c8bfe8a5892 ""
-  "/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty" 1580683321 2590 e3b24ff953e5b58d924f163d25380312 ""
-  "/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty" 1580683321 3976 d7fa7d81d2870d509d25b17d0245e735 ""
-  "/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-dvips.def" 1580854751 26613 b00d7f09ddca105afc02ad397beada5b ""
-  "/usr/share/texlive/texmf-dist/tex/latex/url/url.sty" 1388531844 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
-  "/usr/share/texlive/texmf-dist/tex/platex/base/jarticle.cls" 1580682660 25871 bf40341a488374276f7be0edb3ef0bb8 ""
-  "/usr/share/texlive/texmf-dist/tex/platex/base/jsize10.clo" 1580682660 8603 a046e616e50ded70606529f6f3055e39 ""
-  "/usr/share/texlive/texmf-dist/web2c/texmf.cnf" 1581979058 38841 ce3692aa899bb693b90b87eaa5d4d84e ""
-  "/usr/share/texmf/web2c/texmf.cnf" 1581979058 38841 ce3692aa899bb693b90b87eaa5d4d84e ""
-  "/var/lib/texmf/web2c/eptex/platex.fmt" 1666850989 10598241 637a780cd55cd4e9ae8d3f856b86b6e4 ""
-  "answer.bbl" 1673329313 519 74efcfc049bfacdf4610a407861b0d3b "bibtex answer"
-  "out/answer.aux" 1673409444 979 74d29811f6b3153bd497d75cc91a2ac6 "latex"
+  (rewritten before read)
+["latex"] 1673574141 "c:/Users/AjiokaHaruki/workspace/kadai/資料/answer.tex" "out/answer.dvi" "answer" 1673574143 0
+  "answer.bbl" 1673518334 519 74efcfc049bfacdf4610a407861b0d3b "bibtex answer"
+  "answer.tex" 1673574140 5239 dffa9bb070257f1a8c59a893a71b822e ""
+  "c:/Users/AjiokaHaruki/workspace/kadai/資料/answer.tex" 1673574140 5239 dffa9bb070257f1a8c59a893a71b822e ""
+  "c:/texlive/2022/texmf-dist/fonts/map/fontname/texfonts.map" 1670153604 3524 cb3e574dea2d1052e39280babc910dc8 ""
+  "c:/texlive/2022/texmf-dist/fonts/tfm/ptex-fonts/standard/goth10.tfm" 1670155775 1196 5981e79c37b2cfd27b3612a6783cd4b6 ""
+  "c:/texlive/2022/texmf-dist/fonts/tfm/ptex-fonts/standard/min10.tfm" 1670155775 1196 1be730212205a270378fba11a44765dc ""
+  "c:/texlive/2022/texmf-dist/fonts/tfm/ptex-fonts/standard/tgoth10.tfm" 1670155775 856 7404843a5f798859944d7973a47821d5 ""
+  "c:/texlive/2022/texmf-dist/fonts/tfm/ptex-fonts/standard/tmin10.tfm" 1670155775 856 39c171483fe1bb7d0e1368980c0c205b ""
+  "c:/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm" 1670152840 1324 c910af8c371558dc20f2d7822f66fe64 ""
+  "c:/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmr12.tfm" 1670152840 1288 655e228510b4c2a1abe905c368440826 ""
+  "c:/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmti10.tfm" 1670152840 1480 aa8e34af0eb6a2941b776984cf1dfdc4 ""
+  "c:/texlive/2022/texmf-dist/tex/latex/graphics-cfg/graphics.cfg" 1670153792 1224 978390e9c2234eab29404bc21b268d1e ""
+  "c:/texlive/2022/texmf-dist/tex/latex/graphics-def/dvipdfmx.def" 1670153793 12296 04d6453afafd99986deba3629756d9ec ""
+  "c:/texlive/2022/texmf-dist/tex/latex/graphics/graphics.sty" 1670153791 18387 8f900a490197ebaf93c02ae9476d4b09 ""
+  "c:/texlive/2022/texmf-dist/tex/latex/graphics/graphicx.sty" 1670153791 8010 a8d949cbdbc5c983593827c9eec252e1 ""
+  "c:/texlive/2022/texmf-dist/tex/latex/graphics/keyval.sty" 1670153791 2671 7e67d78d9b88c845599a85b2d41f2e39 ""
+  "c:/texlive/2022/texmf-dist/tex/latex/graphics/trig.sty" 1670153791 4023 293ea1c16429fc0c4cf605f4da1791a9 ""
+  "c:/texlive/2022/texmf-dist/tex/latex/l3backend/l3backend-dvips.def" 1670154303 36093 e05f0e1b90c5bc8f0cea05592fd8fd31 ""
+  "c:/texlive/2022/texmf-dist/tex/latex/url/url.sty" 1670156833 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
+  "c:/texlive/2022/texmf-dist/tex/platex/base/jarticle.cls" 1670155413 25873 fd34d08164a3ea7afd6bc7fe99629a3d ""
+  "c:/texlive/2022/texmf-dist/tex/platex/base/jsize10.clo" 1670155413 8603 0e3b68ad462d501024c2959e1acaa910 ""
+  "c:/texlive/2022/texmf-dist/web2c/texmf.cnf" 1670152064 40171 cdab547de63d26590bebb3baff566530 ""
+  "c:/texlive/2022/texmf-var/web2c/eptex/platex.fmt" 1670157278 3072976 74cb8813caa0d5d25268a75a7d60a1b4 ""
+  "c:/texlive/2022/texmf.cnf" 1670157140 713 e69b156964470283e0530f5060668171 ""
+  "out/answer.aux" 1673574141 1021 934a41467b52cbbb7bf7e311cf3144cf "latex"
   (generated)
   "out/answer.aux"
-  "out/answer.log"
   "out/answer.dvi"
+  "out/answer.log"
+  (rewritten before read)
