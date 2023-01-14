@@ -71,7 +71,7 @@ Box Embedding は d 次元のベクトルの組からなる「箱」の領域で
 Sankar Dasgupta ら\cite{gumbel-box}によって提案された手法はそのうちの一つであり, Gumbel 分布を用いるものである. 
 
 \subsection{Word2Vec}
-Word2Vec \cite{word2vec} は 2013 年に Google の Tomas Mikolov らによって発表された単語のベクトル埋め込み表現の生成モデルである. 
+Word2Vec\cite{word2vec} は 2013 年に Google の Tomas Mikolov らによって発表された単語のベクトル埋め込み表現の生成モデルである. 
 Word2Vec は 2 層ニューラルネットワークであり, 対象とする単語の周辺に現れる単語の頻度をもとに類似する周辺単語を持つ単語とのベクトルの類似度が大きくなるように学習する. 
 周辺の単語から対象の単語を予測し学習する CBOW モデルと対象の単語から周辺の単語を予測し学習する Skip-gram モデルがある.
 
@@ -83,25 +83,42 @@ Word2Box\cite{dasgupta-etal-2022-word2box} は Sankar Dasgupta らによって�
 
 \section{データセット}
 \subsection{Penn Treebank データセット}
-Penn Treebank データセットは
+Penn Treebank データセット\cite{ptb}は 	Mitchell P. Marcus らによって作成された 450 万語を超える大規模英語コーパスであり, コーパスには品詞情報も付加されている. 
+この実験では数字を全て N , 語彙に含まれない単語を \textless unk\textgreater , パディングを \textless pad\textgreater としてそれぞれ一つの単語と見なして語彙数が 1 万語になるように調整されたものを用いた.
 
 \subsection{単語類似度データセット}
 \subsubsection{SimLex-999}
+SimLex-999\cite{simlex999} は Hill Felix らによって発表された単語間の関連性ではなく類似性に基づいて単語間の類似度を定量化したデータセットである. 
+
 \subsubsection{WordSim-353}
+WordSim-353 は () らによって作成された単語の意味
+この実験では類似する単語組のサブセット
+
 \subsubsection{YP-130}
+YP-130 は () らによって作成された
+
 \subsubsection{MEN}
+MEN は　() らによって作成された
+
 \subsubsection{MC-30}
+
 \subsubsection{RG-65}
+
 \subsubsection{VERB-143}
+
 \subsubsection{Stanford RW}
+
 \subsubsection{Mturk-287}
+
 \subsubsection{Mturk-771}
 
+
 \section{実験}
-Word2Box の著者による実装 \url{https://github.com/iesl/word2box} を用いて表 \ref{tb:model_parameter}のパラメータで単語の埋め込みモデルを獲得をした. 
+Word2Box の著者による実装 \url{https://github.com/iesl/word2box} を用いて表 \ref{tb:model_parameter}のパラメータで Penn Treebank コーパスから単語の埋め込みモデルを獲得をした. 
 各単語類似度データセットをもとに類似度の高い単語の組について埋め込み表現同士での類似度を計算し, 学習した語彙の中で何番目に位置するかを求めた. 
 各類似度データセットは数値の基準がそれぞれ異なるため, 表 \ref{tb:dataset_detail} に示す基準値を上回る単語組を実験に用いた. 
 ただし, 基準値は各データセットの類似度の最大値の 80 \% としている. 
+求めた結果から Word2Box が 2 単語間の類似性を適切に学習し Box Embedding で表現できているかを確認した. 
 
 \begin{table}[t]
   \centering
@@ -121,25 +138,26 @@ Word2Box の著者による実装 \url{https://github.com/iesl/word2box} を用�
 \end{table}
 
 
-\begin{table*}[t]
+\begin{table*}[th]
   \centering
-  \caption{Word2Box モデルの学習パラメータ}
+  \caption{類似度データセットから抽出した単語組}
   \label{tb:dataset_detail}
-  \scalebox{0.8}[0.8]{
-  \begin{tabular}{|c||c|c|c|c|c|c|c|c|c|c|} \hline
-      項目&SimLex-999&WordSim-353&YP-130&MEN&MC-30&RG-65&VERB-143&Stanford RW&Mturk-287&Mturk-771 \\ \hline \hline
-      基準値&8&8&3.2&40&3.2&3.2&3.2&8&4&4 \\ \hline
-      該当組数& \\
-      \hline
-  \end{tabular}
+  \scalebox{0.6}[0.6]{
+		\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+			\hline
+			項目   & Stanford RW & RG-65 & YP-130 & MEN & MC-30 & Mturk-287 & SimVerb-3500 & SimLex-999 & Mturk-771 & WS-353(Sim) & WS-353(All) & WS-353(Rel) & VERB-143 \\ \hline
+			基準値  & 8.0         & 3.2   & 3.2    & 40  & 3.2   & 4.0       & 3.2          & 8.0        & 4.0       & 8.0         & 8.0         & 8.0         & 3.2      \\ \hline
+			該当組数 & 36          & 4     & 12     & 166 & 3     & 20        & 1053         & 68         & 85        & 16          & 31          & 14          & 0        \\ \hline
+			\end{tabular}
   }
 \end{table*}
-
 
 \section{結果と考察}
 
 \section{今後の課題}
 今後の課題はうんぬんかんぬん〜
+
+(ノ・ω・)ノ  \reflectbox{\rotatebox{40}{\reflectbox{進捗}}}
 
 \bibliography{index}		%文献データベースindex.bibを使用する
 \bibliographystyle{junsrt} 	%参考文献出力スタイル

@@ -1,11 +1,11 @@
-This is e-pTeX, Version 3.141592653-p4.0.0-220214-2.6 (utf8.sjis) (TeX Live 2022) (preloaded format=platex 2022.12.4)  13 JAN 2023 21:45
+This is e-pTeX, Version 3.141592653-p4.0.0-220214-2.6 (utf8.sjis) (TeX Live 2022) (preloaded format=platex 2023.1.14)  14 JAN 2023 11:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **answer.tex
 (./answer.tex
-pLaTeX2e <2021-11-15> (based on LaTeX2e <2022-11-01> patch level 1)
-L3 programming layer <2022-11-02>
+pLaTeX2e <2021-11-15>+1 (based on LaTeX2e <2022-11-01> patch level 1)
+L3 programming layer <2022-12-17>
 (c:/texlive/2022/texmf-dist/tex/platex/base/jarticle.cls
 Document Class: jarticle 2020/09/30 v1.8f Standard pLaTeX class
 \c@@paper=\count184
@@ -93,34 +93,62 @@ LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <14.4> not available
 (Font)              Font shape `JT1/gt/m/n' tried instead on input line 52.
 LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <14.4> not available
 (Font)              Font shape `JY1/gt/m/n' tried instead on input line 52.
+
+Underfull \hbox (badness 10000) in paragraph at lines 63--65
+[]\OT1/cmr/m/n/10 Box Em-bed-ding \JY1/mc/m/n/10 の獲得手法の一つとして
+ []
+
 LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <12> not available
 (Font)              Font shape `JT1/gt/m/n' tried instead on input line 67.
 LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <12> not available
 (Font)              Font shape `JY1/gt/m/n' tried instead on input line 67.
+LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <10> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 68.
+LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <10> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 68.
+
+LaTeX Warning: Citation `box-lattice' on page 1 undefined on input line 68.
+
+
+LaTeX Warning: Citation `gumbel-box' on page 1 undefined on input line 71.
+
+
+LaTeX Warning: Citation `dasgupta-etal-2022-word2box' on page 1 undefined on in
+put line 79.
+
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 82.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 82.
-LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <10> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 89.
-LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <10> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 89.
- (./answer.bbl [1
+
+LaTeX Warning: Reference `tb:model_parameter' on page 1 undefined on input line
+ 101.
 
 
-]
+LaTeX Warning: Reference `tb:dataset_detail' on page 1 undefined on input line 
+103.
+
+[1
+
+
+] (./answer.bbl
 LaTeX Font Info:    Kanji font shape `JY1/gt/m/it' undefined
 (Font)              No change on input line 6.
-) [2
+) [2] [3] (./answer.aux)
 
-] (./answer.aux) ) 
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
 Here is how much of TeX's memory you used:
- 1040 strings out of 475427
- 17319 string characters out of 5791344
- 378571 words of memory out of 5000000
- 22821 multiletter control sequences out of 15000+600000
- 476088 words of font info for 56 fonts, out of 8000000 for 9000
+ 1042 strings out of 476552
+ 17358 string characters out of 5806846
+ 1861797 words of memory out of 5000000
+ 21698 multiletter control sequences out of 15000+600000
+ 519116 words of font info for 60 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
- 55i,5n,62p,219b,246s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 55i,9n,62p,203b,248s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on answer.dvi (2 pages, 7216 bytes).
+Output written on answer.dvi (3 pages, 10416 bytes).
