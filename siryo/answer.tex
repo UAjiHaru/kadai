@@ -155,10 +155,14 @@ Word2Box の著者による実装 \url{https://github.com/iesl/word2box} を用�
 \section{結果と考察}
 実験結果は表 \ref{tb:result} のようになった. 
 どのデータセットにおいても類似度が 1 から 99 番目に含まれる類似単語のペアはほとんど存在しなかった. 
-それどころか
+それどころか上位 1000 番目までに含まれる類似単語ペアの割合は少数であった. 
+また, 表 \ref{tb:rankdiff} のようにデータセットの種類にかかわらずほとんどの単語ペアにおいて類似度の順位を求める対象単語を入れ替えると順位が大きく変動することが確認された. 
+ただし, ここで大きく変動したとする基準は順位が 1000 異なる場合とした. 
+
+次に類似度の順位が 1 から 99 番目に含まれていた単語組を表 \ref{tb:sim_words} に示す. 
+
 
 \begin{table}[th]
-  \centering
   \caption{類似単語ペアが含まれる順位}
   \label{tb:result}
   \begin{tabular}{c|ccc}
@@ -179,6 +183,45 @@ Word2Box の著者による実装 \url{https://github.com/iesl/word2box} を用�
     VERB-143     & 0    & 0       & 0       \\ \hline
   \end{tabular}
 \end{table}
+
+\begin{table}[th]
+  \centering
+  \caption{対象単語入れ替えによる順位変動}
+  \label{tb:rankdiff}
+  \begin{tabular}{c|c|c}
+    \hline
+    データセット       & 変動が大きい組 & 組の総数 \\ \hline
+    Stanford RW  & 28      & 36   \\
+    RG-65        & 4       & 4    \\
+    YP-130       & 9       & 12   \\
+    MEN          & 123     & 166  \\
+    MC-30        & 3       & 3    \\
+    Mturk-287    & 14      & 20   \\
+    SimVerb-3500 & 847     & 1053 \\
+    SimLex-999   & 54      & 68   \\
+    Mturk-771    & 53      & 85   \\
+    WS-353(Sim)  & 14      & 16   \\
+    WS-353(All)  & 24      & 31   \\
+    WS-353(Rel)  & 10      & 14   \\
+    VERB-143     & 0       & 0    \\ \hline
+  \end{tabular}
+\end{table}
+
+\begin{table*}[th]
+  \centering
+  \caption{a}
+  \label{tb:sim_words}
+  \begin{tabular}{c|c}
+    \hline
+    データセット       & 類似単語組    \\ \hline
+    MEN          & flight plane, highway traffic, cold frozen, mountain valley, bay beach, burger meat  \\ \hline
+    SimVerb-3500 & \begin{tabular}[c]{@{}c@{}}let release, tell testify,release go, express tell, save rescue, release relax, tell predict,\\  spend use, say tell, tell respond, fight defend, rescue help, leave release, release drain,\\  release loosen, remove release, rescue find, gamble bet, gamble risk\end{tabular} \\ \hline
+    SimLex-999   & essential necessary, area zone, pact agreement, physician doctor, expand grow  \\ \hline
+    Mturk-771    & season winter \\ \hline
+    WS-353(All)  & king queen, opec oil \\ \hline
+    WS-353(Rel)  & opec oil    \\ \hline
+  \end{tabular}
+\end{table*}
 
 \section{今後の課題}
 今後の課題はうんぬんかんぬん〜
