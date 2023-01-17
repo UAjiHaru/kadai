@@ -1,5 +1,13 @@
 \begin{thebibliography}{1}
 
+\bibitem{pmlr-v161-boratko21a}
+Michael Boratko, Javier Burroni, Shib~Sankar Dasgupta, and Andrew McCallum.
+\newblock Min/max stability and box distributions.
+\newblock In Cassio de~Campos and Marloes~H. Maathuis, editors, {\em
+  Proceedings of the Thirty-Seventh Conference on Uncertainty in Artificial
+  Intelligence}, Vol. 161 of {\em Proceedings of Machine Learning Research},
+  pp. 2146--2155. PMLR, 27--30 Jul 2021.
+
 \bibitem{box-lattice}
 Luke Vilnis, Xiang Li, Shikhar Murty, and Andrew McCallum.
 \newblock Probabilistic embedding of knowledge graphs with box lattice
@@ -27,5 +35,26 @@ Shib Dasgupta, Michael Boratko, Siddhartha Mishra, Shriya Atmakuri, Dhruvesh
 \newblock In {\em Proceedings of the 60th Annual Meeting of the Association for
   Computational Linguistics (Volume 1: Long Papers)}, pp. 2263--2276, Dublin,
   Ireland, May 2022. Association for Computational Linguistics.
+
+\bibitem{ptb}
+Mitchell~P. Marcus, Mary~Ann Marcinkiewicz, and Beatrice Santorini.
+\newblock Building a large annotated corpus of english: The penn treebank.
+\newblock {\em Comput. Linguist.}, Vol.~19, No.~2, p. 313^^e2^^80^^93330, jun
+  1993.
+
+\bibitem{simlex999}
+Felix Hill, Roi Reichart, and Anna Korhonen.
+\newblock {S}im{L}ex-999: Evaluating semantic models with (genuine) similarity
+  estimation.
+\newblock {\em Computational Linguistics}, Vol.~41, No.~4, pp. 665--695,
+  December 2015.
+
+\bibitem{wordsim353}
+Lev Finkelstein, Evgeniy Gabrilovich, Yossi Matias, Ehud Rivlin, Zach Solan,
+  Gadi Wolfman, and Eytan Ruppin.
+\newblock Placing search in context: The concept revisited.
+\newblock In {\em Proceedings of the 10th International Conference on World
+  Wide Web}, WWW '01, p. 406^^e2^^80^^93414, New York, NY, USA, 2001.
+  Association for Computing Machinery.
 
 \end{thebibliography}
