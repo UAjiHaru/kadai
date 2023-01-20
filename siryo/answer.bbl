@@ -1,12 +1,4 @@
-\begin{thebibliography}{1}
-
-\bibitem{pmlr-v161-boratko21a}
-Michael Boratko, Javier Burroni, Shib~Sankar Dasgupta, and Andrew McCallum.
-\newblock Min/max stability and box distributions.
-\newblock In Cassio de~Campos and Marloes~H. Maathuis, editors, {\em
-  Proceedings of the Thirty-Seventh Conference on Uncertainty in Artificial
-  Intelligence}, Vol. 161 of {\em Proceedings of Machine Learning Research},
-  pp. 2146--2155. PMLR, 27--30 Jul 2021.
+\begin{thebibliography}{10}
 
 \bibitem{box-lattice}
 Luke Vilnis, Xiang Li, Shikhar Murty, and Andrew McCallum.
@@ -22,10 +14,18 @@ Shib {Sankar Dasgupta}, Michael {Boratko}, Dongxu {Zhang}, Luke {Vilnis},
 \newblock {Improving Local Identifiability in Probabilistic Box Embeddings}.
 \newblock {\em arXiv e-prints}, p. arXiv:2010.04831, October 2020.
 
-\bibitem{word2vec}
-Tomas {Mikolov}, Kai {Chen}, Greg {Corrado}, and Jeffrey {Dean}.
-\newblock {Efficient Estimation of Word Representations in Vector Space}.
-\newblock {\em arXiv e-prints}, p. arXiv:1301.3781, January 2013.
+\bibitem{li2018smoothing}
+Xiang Li, Luke Vilnis, Dongxu Zhang, Michael Boratko, and Andrew McCallum.
+\newblock Smoothing the geometry of probabilistic box embeddings.
+\newblock In {\em International Conference on Learning Representations}, 2019.
+
+\bibitem{pmlr-v161-boratko21a}
+Michael Boratko, Javier Burroni, Shib~Sankar Dasgupta, and Andrew McCallum.
+\newblock Min/max stability and box distributions.
+\newblock In Cassio de~Campos and Marloes~H. Maathuis, editors, {\em
+  Proceedings of the Thirty-Seventh Conference on Uncertainty in Artificial
+  Intelligence}, Vol. 161 of {\em Proceedings of Machine Learning Research},
+  pp. 2146--2155. PMLR, 27--30 Jul 2021.
 
 \bibitem{dasgupta-etal-2022-word2box}
 Shib Dasgupta, Michael Boratko, Siddhartha Mishra, Shriya Atmakuri, Dhruvesh
@@ -35,6 +35,11 @@ Shib Dasgupta, Michael Boratko, Siddhartha Mishra, Shriya Atmakuri, Dhruvesh
 \newblock In {\em Proceedings of the 60th Annual Meeting of the Association for
   Computational Linguistics (Volume 1: Long Papers)}, pp. 2263--2276, Dublin,
   Ireland, May 2022. Association for Computational Linguistics.
+
+\bibitem{word2vec}
+Tomas {Mikolov}, Kai {Chen}, Greg {Corrado}, and Jeffrey {Dean}.
+\newblock {Efficient Estimation of Word Representations in Vector Space}.
+\newblock {\em arXiv e-prints}, p. arXiv:1301.3781, January 2013.
 
 \bibitem{ptb}
 Mitchell~P. Marcus, Mary~Ann Marcinkiewicz, and Beatrice Santorini.
@@ -56,5 +61,67 @@ Lev Finkelstein, Evgeniy Gabrilovich, Yossi Matias, Ehud Rivlin, Zach Solan,
 \newblock In {\em Proceedings of the 10th International Conference on World
   Wide Web}, WWW '01, p. 406^^e2^^80^^93414, New York, NY, USA, 2001.
   Association for Computing Machinery.
+
+\bibitem{yp-130}
+Dongqiang Yang and David Powers.
+\newblock Verb similarity on the taxonomy of wordnet.
+\newblock {\em Proceedings of the 3rd International WordNet Conference (GWC)},
+  pp. 121--128, 01 2006.
+
+\bibitem{men}
+Elia Bruni, Nam~Khanh Tran, and Marco Baroni.
+\newblock Multimodal distributional semantics.
+\newblock {\em J. Artif. Int. Res.}, Vol.~49, No.~1, p. 1^^e2^^80^^9347, jan
+  2014.
+
+\bibitem{mc-30}
+George~A. Miller and Walter~G. Charles.
+\newblock Contextual correlates of semantic similarity.
+\newblock {\em Language and Cognitive Processes}, Vol.~6, No.~1, pp. 1--28,
+  1991.
+
+\bibitem{rg-65}
+Herbert Rubenstein and John~B. Goodenough.
+\newblock Contextual correlates of synonymy.
+\newblock {\em Commun. ACM}, Vol.~8, No.~10, p. 627^^e2^^80^^93633, oct 1965.
+
+\bibitem{verb-143}
+Simon Baker, Roi Reichart, and Anna Korhonen.
+\newblock An unsupervised model for instance level subcategorization
+  acquisition.
+\newblock In {\em Proceedings of the 2014 Conference on Empirical Methods in
+  Natural Language Processing ({EMNLP})}, pp. 278--289, Doha, Qatar, October
+  2014. Association for Computational Linguistics.
+
+\bibitem{stanford-rw}
+Thang Luong, Richard Socher, and Christopher Manning.
+\newblock Better word representations with recursive neural networks for
+  morphology.
+\newblock In {\em Proceedings of the Seventeenth Conference on Computational
+  Natural Language Learning}, pp. 104--113, Sofia, Bulgaria, August 2013.
+  Association for Computational Linguistics.
+
+\bibitem{mrutk-287}
+Thang Luong, Richard Socher, and Christopher Manning.
+\newblock Better word representations with recursive neural networks for
+  morphology.
+\newblock In {\em Proceedings of the Seventeenth Conference on Computational
+  Natural Language Learning}, pp. 104--113, Sofia, Bulgaria, August 2013.
+  Association for Computational Linguistics.
+
+\bibitem{mturk-771}
+Thang Luong, Richard Socher, and Christopher Manning.
+\newblock Better word representations with recursive neural networks for
+  morphology.
+\newblock In {\em Proceedings of the Seventeenth Conference on Computational
+  Natural Language Learning}, pp. 104--113, Sofia, Bulgaria, August 2013.
+  Association for Computational Linguistics.
+
+\bibitem{gerz-etal-2016-simverb}
+Daniela Gerz, Ivan Vuli{\'c}, Felix Hill, Roi Reichart, and Anna Korhonen.
+\newblock {S}im{V}erb-3500: A large-scale evaluation set of verb similarity.
+\newblock In {\em Proceedings of the 2016 Conference on Empirical Methods in
+  Natural Language Processing}, pp. 2173--2182, Austin, Texas, November 2016.
+  Association for Computational Linguistics.
 
 \end{thebibliography}

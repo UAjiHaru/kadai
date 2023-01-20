@@ -69,51 +69,71 @@ Box Embedding は d 次元のベクトルの組からなる「箱」の領域で
 図 \ref{fig:box_embedding2d} が示す mammal と carnivore の「箱」の共有部分にて cat の「箱」が存在するように, Box Embedding では「箱」同士の重なりによって単語の意味の包含関係や階層関係を表現する. 
 しかし, Box Embedding は「箱」の重なりを調整することで表現を獲得するが, Vilnis Luke らによって提案された方法では「箱」が重ならないと勾配が計算できず最適化が難しくなる問題がある.
 この問題に対して「箱」の境界を滑らかだとして領域を計算することで「箱」同士が離れていても勾配を求められ最適化できる. 
-Sankar Dasgupta ら\cite{gumbel-box}によって提案された手法はそのうちの一つであり, Gumbel 分布を用いるものである. 
+Sankar Dasgupta ら \cite{gumbel-box} によって提案された手法はそのうちの一つであり, Gumbel 分布を用いるものである. 
 Gumbel 分布を適用した 2 次元での「箱」は図 \ref{fig:gumbel_box} のようになる. 
+Gumbel 分布を適用することで「箱」をうまく最適化することができ Box Embedding を獲得しやすくなる. 
 
 \begin{figure}[t]
   \centering
-  \caption{2 次元での Box Embedding の例 (文献\cite{li2018smoothing} Figure 1 引用)}
+  \caption{2 次元での Box Embedding の例 (文献 \cite{li2018smoothing} Figure 1 引用)}
   \label{fig:box_embedding2d}
   \includegraphics[width=70mm]{BoxEmbedding_2d.png}
 \end{figure}
 
 \begin{figure}[t]
   \centering
-  \caption{2 次元での Gumbel Box の例 (文献\cite{pmlr-v161-boratko21a} Figure 3 引用)}
+  \caption{2 次元での Gumbel Box の例 (文献 \cite{pmlr-v161-boratko21a} Figure 3 引用)}
   \label{fig:gumbel_box}
   \includegraphics[width=70mm]{GumbelBoxes.png}
 \end{figure}
 
-\subsection{Word2Vec}
-Word2Vec \cite{word2vec} は 2013 年に Google の Tomas Mikolov らによって発表された単語のベクトル埋め込み表現の生成モデルである. 
-Word2Vec は 2 層ニューラルネットワークであり, 対象とする単語の周辺に現れる単語の頻度をもとに類似する周辺単語を持つ単語とのベクトルの類似度が大きくなるように学習する. 
-周辺の単語から対象の単語を予測し学習する CBOW モデルと対象の単語から周辺の単語を予測し学習する Skip-gram モデルがある.
+% \subsection{Word2Vec}
+% Word2Vec \cite{word2vec} は 2013 年に Google の Tomas Mikolov らによって発表された単語のベクトル埋め込み表現の生成モデルである. 
+% Word2Vec は 2 層ニューラルネットワークであり, 対象とする単語の周辺に現れる単語の頻度をもとに類似する周辺単語を持つ単語とのベクトルの類似度が大きくなるように学習する. 
+% 周辺の単語から対象の単語を予測し学習する CBOW モデルと対象の単語から周辺の単語を予測し学習する Skip-gram モデルがある.
 
 \subsection{Word2Box}
 Word2Box \cite{dasgupta-etal-2022-word2box} は Sankar Dasgupta らによって提案された手法であり, 単語の領域表現の Box Embedding を教師なし学習で獲得するものである. 
-学習方法は Word2Vec の CBOW モデルと同様に対象の単語とその周辺単語の「箱」の重なりが大きくなるように学習する. 
-加えて, 「箱」をただ大きくする最適化にならないように適当な語を負例として抽出し周辺単語との重なりを小さくするように学習する. 
+学習方法は Word2Vec \cite{word2vec} と同様で, 似た意味の単語は似た文脈に現れるという仮説をもとに対象単語とその周辺単語の関係を学習することで獲得する. 
+また, 今回の実験では CBOW モデルのように対象の単語とその周辺単語との「箱」同士の重なりが大きくなるように学習する. 
+加えて, 「箱」をただ大きくする最適化にならないように適当な語を負例として抽出し周辺単語との重なりを小さくなるように学習もする. 
 
 \section{データセット}
 \subsection{Penn Treebank データセット}
-Penn Treebank データセット\cite{ptb}は 	Mitchell P. Marcus らによって作成された 450 万語を超える大規模英語コーパスであり, コーパスには品詞情報も付加されている. 
+Penn Treebank データセット \cite{ptb} は 	Mitchell P. Marcus らによって作成された 450 万語を超える大規模英語コーパスであり, コーパスには品詞情報も付加されている. 
 この実験では数字を全て N , 語彙に含まれない単語を \textless unk\textgreater , パディングを \textless pad\textgreater としてそれぞれ一つの単語と見なして語彙数が 1 万語になるように調整されたものを用いた.
 
 \subsection{単語類似度データセット}
-\subsubsection{SimLex-999}
-SimLex-999 \cite{simlex999} は Hill Felix らによって発表された英語の 999 組の単語間の関連性ではなく類似性に基づいて, 単語間の類似度を 0 から 10 の範囲で定量化したデータセットである. 
+実験で単語の類似性を確かめるために単語類似度データセットとして以下のものを用いた. 
+ただし, 各データセットの特徴に関しての詳細はそれぞれの文献を参照してもらいたい. 
+また, WordSim-353 は関連する単語組で構成されるサブセットである WS-353 (Rel) と類似する単語組で構成されるサブセットである WS-353 (Sim) も用いた. 
 
-\subsubsection{WordSim-353}
-WordSim-353 \cite{wordsim353} は Finkelstein Lev らによって作成された英語の 350 個の単語組をその関係度で 0 から 10 の範囲で評価したデータセットである.
-このデータセットでは関連性と類似性による評価が混在しており, 関連する 252 単語組のサブセットである　WS-353(Rel) と 類似する 203 単語組のサブセットである WS-353(Sim) がある.
+\begin{itemize}
+  \item Simlex-999 \cite{simlex999}
+  \item WordSim-353 \cite{wordsim353}
+  \item YP-130 \cite{yp-130}
+  \item MEN \cite{men}
+  \item MC-30 \cite{mc-30}
+  \item RG-65 \cite{rg-65}
+  \item VERB-143 \cite{verb-143}
+  \item Stanford RW \cite{stanford-rw}
+  \item Mturk-287 \cite{mrutk-287}
+  \item Mturk-771 \cite{mturk-771}
+  \item SimVerb-3500 \cite{gerz-etal-2016-simverb}
+\end{itemize}
 
-\subsubsection{YP-130}
-YP-130 は () らによって作成された英語の動詞の 130 個の単語組についての類似性を 0 から 4 の範囲で評価したデータセットである. 
+% \subsubsection{SimLex-999}
+% SimLex-999 \cite{simlex999} は Hill Felix らによって発表された英語の 999 組の単語間の関連性ではなく類似性に基づいて, 単語間の類似度を 0 から 10 の範囲で定量化したデータセットである. 
 
-\subsubsection{MEN}
-MEN は　() らによって作成された画像情報なども活用した英単語 3000 組についての意味的類似性
+% \subsubsection{WordSim-353}
+% WordSim-353 \cite{wordsim353} は Finkelstein Lev らによって作成された英語の 350 個の単語組をその関係度で 0 から 10 の範囲で評価したデータセットである.
+% このデータセットでは関連性と類似性による評価が混在しており, 関連する 252 単語組のサブセットである　WS-353(Rel) と 類似する 203 単語組のサブセットである WS-353(Sim) がある.
+
+% \subsubsection{YP-130}
+% YP-130 は () らによって作成された英語の動詞の 130 個の単語組についての類似性を 0 から 4 の範囲で評価したデータセットである. 
+
+% \subsubsection{MEN}
+% MEN は　() らによって作成された画像情報なども活用して英単語 3000 組についての意味的類似性を から の範囲で付与したデータセットである. 
 
 % \subsubsection{MC-30}
 
@@ -126,7 +146,6 @@ MEN は　() らによって作成された画像情報なども活用した英�
 % \subsubsection{Mturk-287}
 
 % \subsubsection{Mturk-771}
-
 
 \section{実験}
 Word2Box の著者による実装 \url{https://github.com/iesl/word2box} を用いて表 \ref{tb:model_parameter} のパラメータで Penn Treebank コーパスから単語の埋め込みモデルを獲得をした. 
@@ -156,10 +175,11 @@ Word2Box の著者による実装 \url{https://github.com/iesl/word2box} を用�
   \centering
   \caption{類似度データセットから抽出した単語組}
   \label{tb:dataset_detail}
-  \scalebox{0.6}[0.6]{
+  \scalebox{0.63}[0.63]{
 		\begin{tabular}{c|ccccccccccccc}
 			\hline
-			項目   & Stanford RW & RG-65 & YP-130 & MEN & MC-30 & Mturk-287 & SimVerb-3500 & SimLex-999 & Mturk-771 & WS-353(Sim) & WS-353(All) & WS-353(Rel) & VERB-143 \\ \hline
+			
+      & Stanford RW & RG-65 & YP-130 & MEN & MC-30 & Mturk-287 & SimVerb-3500 & SimLex-999 & Mturk-771 & WS-353(Sim) & WS-353(All) & WS-353(Rel) & VERB-143 \\ \hline
 			基準値  & 8.0         & 3.2   & 3.2    & 40  & 3.2   & 4.0       & 3.2          & 8.0        & 4.0       & 8.0         & 8.0         & 8.0         & 3.2      \\
 			該当組数 & 36          & 4     & 12     & 166 & 3     & 20        & 1053         & 68         & 85        & 16          & 31          & 14          & 0        \\ \hline
 			\end{tabular}
@@ -175,15 +195,15 @@ Word2Box の著者による実装 \url{https://github.com/iesl/word2box} を用�
 この大きく変動する組においても単語組が類似性を示す結果とはならなかった. 
 
 次に類似度の順位が 1 から 99 番目に含まれていた単語組を表 \ref{tb:sim_words} に示す. 
-含まれていた単語組と含まれなかった単語組との間に法則性を見出すことはできなかった. 
-
+含まれていた単語組と含まれなかった単語組との間に使われる文脈や意味において法則性を見出すことはできなかった. 
+また, データセット間での特徴や法則性も見受けられなかった. 
 
 \begin{table}[th]
   \caption{類似単語ペアが含まれる順位}
   \label{tb:result}
   \begin{tabular}{c|ccc}
     \hline
-    順位           & 1-99 & 100-499 & 500-999 \\ \hline
+    順位           & 1-99 & 100-499 & 500-999 \\ \hline \hline
     Stanford RW  & 0    & 7       & 0       \\
     RG-65        & 0    & 0       & 0       \\
     YP-130       & 0    & 2       & 2       \\
@@ -206,7 +226,7 @@ Word2Box の著者による実装 \url{https://github.com/iesl/word2box} を用�
   \label{tb:rankdiff}
   \begin{tabular}{c|c|c}
     \hline
-    データセット       & 変動が大きい組 & 組の総数 \\ \hline
+    データセット       & 変動が大きい組 & 組の総数 \\ \hline \hline
     Stanford RW  & 28      & 36   \\
     RG-65        & 4       & 4    \\
     YP-130       & 9       & 12   \\
@@ -229,7 +249,7 @@ Word2Box の著者による実装 \url{https://github.com/iesl/word2box} を用�
   \label{tb:sim_words}
   \begin{tabular}{c|c}
     \hline
-    データセット       & 類似単語組    \\ \hline
+    データセット       & 類似単語組    \\ \hline \hline
     MEN          & flight plane, highway traffic, cold frozen, mountain valley, bay beach, burger meat  \\ \hline
     SimVerb-3500 & \begin{tabular}[c]{@{}c@{}}let release, tell testify,release go, express tell, save rescue, release relax, tell predict,\\  spend use, say tell, tell respond, fight defend, rescue help, leave release, release drain,\\  release loosen, remove release, rescue find, gamble bet, gamble risk\end{tabular} \\ \hline
     SimLex-999   & essential necessary, area zone, pact agreement, physician doctor, expand grow  \\ \hline
@@ -242,8 +262,9 @@ Word2Box の著者による実装 \url{https://github.com/iesl/word2box} を用�
 
 \section{今後の課題}
 今回の実験結果は Word2Box によって獲得した Box Embedding について意味が近い単語間では似た分散表現になるという性質を示しておらず, その点において十分な表現能力があることを確認できなかった. 
-提案論文において\cite{dasgupta-etal-2022-word2box}学習パラメータはいくつかの数値からランダムに選択することで決定し,実験とは異なる学習データを用いているため, 学習パラメータの調整や学習用の文章の変更によって性能の向上の可能性を模索する余地があると考えられる. 
-また, Box Embedding の特徴の一つでもある集合による単語の意味の包含関係の表現や多義語に対する表現の検証を今回の実験ではできなかった. 
+提案論文 \cite{dasgupta-etal-2022-word2box} において学習パラメータはいくつかの数値からランダムに選択することで決定し, 実験とは異なる学習データを用いているため, 学習パラメータの調整や学習用の文章の変更によって性能の向上の可能性を模索する余地があると考えられる. 
+加えて今回は Word2Vec に代表されるようなベクトル埋め込み表現と Word2Box の性能差を確かめる実験ができなかったが他の領域埋め込み手法も加えて表現能力の比較検証の必要がある. 
+また, 日本語のデータに対して Word2Box と　Box Embedding を適用した場合においても意味の包含関係や階層関係が表現されるのかを確認したい. 
 
 \bibliography{index}		%文献データベースindex.bibを使用する
 \bibliographystyle{junsrt} 	%参考文献出力スタイル
