@@ -1,5 +1,5 @@
 # Fdb version 4
-["bibtex answer"] 1674223131 "answer.aux" "answer.bbl" "answer" 1674223681 0
+["bibtex answer"] 1674223131 "answer.aux" "answer.bbl" "answer" 1674387915 0
   "./index.bib" 1674223130 12146 e3a2eed878f8a14a646b19be76955566 ""
   "answer.aux" 1674223612 3482 5c1782fd3a833701a37ef4aa4c011615 ""
   "junsrt.bst" 0 -1 0 ""
@@ -7,27 +7,36 @@
   "answer.bbl"
   "answer.blg"
   (rewritten before read)
-["dvipdf"] 1674223680 "out/answer.dvi" "out/answer.pdf" "out/answer" 1674223681 0
-  "out/answer.dvi" 1674223679 26080 850de80ffe840441657a3707c5e683c1 "latex"
+["dvipdf"] 1674387914 "out/answer.dvi" "out/answer.pdf" "out/answer" 1674387915 0
+  "out/answer.dvi" 1674387913 23756 b93409a11a9451670ac93620ce5ce711 "latex"
   (generated)
   "out/answer.pdf"
   (rewritten before read)
-["latex"] 1674223678 "c:/Users/AjiokaHaruki/workspace/kadai/siryo/answer.tex" "out/answer.dvi" "answer" 1674223681 0
+["latex"] 1674387912 "c:/Users/AjiokaHaruki/workspace/kadai/siryo/answer.tex" "out/answer.dvi" "answer" 1674387915 0
   "BoxEmbedding_2d.png" 1674136921 12884 e17713aa150a41516422194ae79e92ea ""
   "GumbelBoxes.png" 1673912730 241131 7c5d958b7560798b4cdba90796aad6d1 ""
   "answer.bbl" 1674223603 5561 ded2382dc27f32748da56c369b42dae4 "bibtex answer"
-  "answer.tex" 1674223677 16376 34d75575ac85042659af544c40cdc419 ""
-  "c:/Users/AjiokaHaruki/workspace/kadai/siryo/answer.tex" 1674223677 16376 34d75575ac85042659af544c40cdc419 ""
+  "answer.tex" 1674387908 14891 42522fc6194a039d5de877dedcd87e20 ""
+  "c:/Users/AjiokaHaruki/workspace/kadai/siryo/answer.tex" 1674387908 14891 42522fc6194a039d5de877dedcd87e20 ""
   "c:/texlive/2022/texmf-dist/fonts/map/fontname/texfonts.map" 1670153604 3524 cb3e574dea2d1052e39280babc910dc8 ""
-  "c:/texlive/2022/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1670153297 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
   "c:/texlive/2022/texmf-dist/fonts/tfm/ptex-fonts/standard/goth10.tfm" 1670155775 1196 5981e79c37b2cfd27b3612a6783cd4b6 ""
   "c:/texlive/2022/texmf-dist/fonts/tfm/ptex-fonts/standard/min10.tfm" 1670155775 1196 1be730212205a270378fba11a44765dc ""
+  "c:/texlive/2022/texmf-dist/fonts/tfm/ptex-fonts/standard/min6.tfm" 1670155775 1196 ede67ffb8cb4a6a8b9436c82b428664c ""
+  "c:/texlive/2022/texmf-dist/fonts/tfm/ptex-fonts/standard/min8.tfm" 1670155775 1196 d5b431ce76e19b70391960a9dd08fa4f ""
   "c:/texlive/2022/texmf-dist/fonts/tfm/ptex-fonts/standard/tgoth10.tfm" 1670155775 856 7404843a5f798859944d7973a47821d5 ""
   "c:/texlive/2022/texmf-dist/fonts/tfm/ptex-fonts/standard/tmin10.tfm" 1670155775 856 39c171483fe1bb7d0e1368980c0c205b ""
+  "c:/texlive/2022/texmf-dist/fonts/tfm/ptex-fonts/standard/tmin6.tfm" 1670155775 856 e782a1e1d78799594d137f0fef162b39 ""
+  "c:/texlive/2022/texmf-dist/fonts/tfm/ptex-fonts/standard/tmin8.tfm" 1670155775 856 bdef40bcf3aed4751efa9be9bfa6eb4b ""
   "c:/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm" 1670152840 1324 c910af8c371558dc20f2d7822f66fe64 ""
+  "c:/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmmi6.tfm" 1670152840 1512 f21f83efb36853c0b70002322c1ab3ad ""
+  "c:/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmmi8.tfm" 1670152840 1520 eccf95517727cb11801f4f1aee3a21b4 ""
   "c:/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmr12.tfm" 1670152840 1288 655e228510b4c2a1abe905c368440826 ""
+  "c:/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmr6.tfm" 1670152840 1300 b62933e007d01cfd073f79b963c01526 ""
+  "c:/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmr8.tfm" 1670152840 1292 21c1c5bfeaebccffdb478fd231a0997d ""
+  "c:/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm" 1670152840 1116 933a60c408fc0a863a92debe84b2d294 ""
+  "c:/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm" 1670152840 1120 8b7d695260f3cff42e636090a8002094 ""
   "c:/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmti10.tfm" 1670152840 1480 aa8e34af0eb6a2941b776984cf1dfdc4 ""
-  "c:/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmtt10.tfm" 1670152840 768 1321e9409b4137d6fb428ac9dc956269 ""
+  "c:/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmtt8.tfm" 1670152840 768 d7b9a2629a0c353102ad947dc9221d49 ""
   "c:/texlive/2022/texmf-dist/tex/latex/base/omlcmr.fd" 1670154334 2470 cfb0d4d2386b9f8f779b8306fb78b31e ""
   "c:/texlive/2022/texmf-dist/tex/latex/graphics-cfg/graphics.cfg" 1670153792 1224 978390e9c2234eab29404bc21b268d1e ""
   "c:/texlive/2022/texmf-dist/tex/latex/graphics-def/dvipdfmx.def" 1670153793 12296 04d6453afafd99986deba3629756d9ec ""
@@ -42,7 +51,7 @@
   "c:/texlive/2022/texmf-dist/web2c/texmf.cnf" 1670152064 40171 cdab547de63d26590bebb3baff566530 ""
   "c:/texlive/2022/texmf-var/web2c/eptex/platex.fmt" 1670157278 3072976 74cb8813caa0d5d25268a75a7d60a1b4 ""
   "c:/texlive/2022/texmf.cnf" 1670157140 713 e69b156964470283e0530f5060668171 ""
-  "out/answer.aux" 1674223679 3482 5c1782fd3a833701a37ef4aa4c011615 "latex"
+  "out/answer.aux" 1674387913 3304 10932d5b9c91e10f6b375b2dcddb928d "latex"
   (generated)
   "out/answer.aux"
   "out/answer.dvi"

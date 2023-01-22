@@ -53,25 +53,25 @@
 
 \section{はじめに}
 深層学習など機械学習による自然言語処理は盛んな研究分野の一つである. 
-自然言語処理はもちろん機械学習においても単語の表現や処理方法は文章の意味を計算によって解析するために必要不可欠な根幹的な要素である.
-近年, Word2Vec のような単語のベクトル表現が広く使われる一方で単語の意味で表現することができない要素があることが認識されている. 
-その代表的なものとして点でしかデータを表すことができないというものである. 
-単語のベクトル埋め込みにおいてこのことは単語の意味の包含関係や階層関係といった集合的な性質を自然に表現できないということに起因する. 
-このような問題を解決するための表現として領域表現が提案されており, ガウス分布を用いたものや双曲空間を用いたものがある. 
+自然言語処理はもちろん機械学習においても単語の表現や処理方法は文章の意味を計算によって解析するために必要かつ根幹的な要素である.
+近年, Word2Vec のような単語の分散表現ベクトルが広く使われる一方で単語の意味で表現しきれない要素があることが認識されている. 
+その代表例として点でしかデータを表すことができないというものがある. 
+単語の埋め込みにおいてこのことは単語の意味の包含関係や階層関係といった集合的性質を自然に表現できないということに起因する. 
+このような問題を解決するための表現として領域表現が提案されている. 
 本実験では始点と終点の組で表される「箱」への単語埋め込み表現である Box Embedding を扱う. 
 
-Box Embedding の獲得手法の一つとして Word2Box がある. 
-この実験では Word2Box による単語埋め込み表現を獲得し, その埋め込み表現が単語間の意味をどのように表しているかを確認した. 
+Box Embedding の獲得手法の一つである Word2Box による単語埋め込み表現を獲得し, その埋め込み表現が単語間の意味をどのように表しているかを実験により確認した. 
 
 \section{要素技術}
 \subsection{Box Embedding}
 Box Embedding は d 次元のベクトルの組からなる「箱」の領域で単語を表現するものであり, Vilnis Luke ら\cite{box-lattice}によって提案された. 
-図 \ref{fig:box_embedding2d} が示す mammal と carnivore の「箱」の共有部分にて cat の「箱」が存在するように, Box Embedding では「箱」同士の重なりによって単語の意味の包含関係や階層関係を表現する. 
-しかし, Box Embedding は「箱」の重なりを調整することで表現を獲得するが, Vilnis Luke らによって提案された方法では「箱」が重ならないと勾配が計算できず最適化が難しくなる問題がある.
+図 \ref{fig:box_embedding2d} に Box Embedding の例を示す. 
+図 \ref{fig:box_embedding2d} では mammal と carnivore の「箱」の共有部分にて cat の「箱」が存在するように, Box Embedding では「箱」同士の重なりによって単語の意味の包含関係や階層関係を表現する. 
+
+Box Embedding は「箱」の重なりを調整することで表現を獲得する. しかし, Vilnis Luke らによって提案された方法では「箱」が重ならないと勾配が計算できず最適化が難しくなる問題がある.
 この問題に対して「箱」の境界を滑らかだとして領域を計算することで「箱」同士が離れていても勾配を求められ最適化できる. 
-Sankar Dasgupta ら \cite{gumbel-box} によって提案された手法はそのうちの一つであり, Gumbel 分布を用いるものである. 
-Gumbel 分布を適用した 2 次元での「箱」は図 \ref{fig:gumbel_box} のようになる. 
-Gumbel 分布を適用することで「箱」をうまく最適化することができ Box Embedding を獲得しやすくなる. 
+図 \ref{fig:gumbel_box} にGumbel 分布を適用した 2 次元での「箱」を示す. 
+Gumbel 分布を適用することで「箱」をうまく最適化することができ Box Embedding を獲得しやすくなる \cite{gumbel-box}. 
 
 \begin{figure}[t]
   \centering
@@ -101,56 +101,19 @@ Word2Box \cite{dasgupta-etal-2022-word2box} は Sankar Dasgupta らによって�
 \section{データセット}
 \subsection{Penn Treebank データセット}
 Penn Treebank データセット \cite{ptb} は 	Mitchell P. Marcus らによって作成された 450 万語を超える大規模英語コーパスであり, コーパスには品詞情報も付加されている. 
-この実験では数字を全て N , 語彙に含まれない単語を \textless unk\textgreater , パディングを \textless pad\textgreater としてそれぞれ一つの単語と見なして語彙数が 1 万語になるように調整されたものを用いた.
+この実験では数字を全て `N' , 語彙に含まれない単語を ``\textless unk\textgreater'' , パディングを ``\textless pad\textgreater'' としてそれぞれ一つの単語と見なして語彙数が 1 万語になるように調整されたものを用いた.
 
 \subsection{単語類似度データセット}
-実験で単語の類似性を確かめるために単語類似度データセットとして以下のものを用いた. 
+実験で単語の類似性を確かめるために単語類似度データセットとして Simlex-999 \cite{simlex999} と WordSim-353 \cite{wordsim353}, YP-130 \cite{yp-130}, MEN \cite{men}, MC-30 \cite{mc-30}, RG-65 \cite{rg-65}, VERB-143 \cite{verb-143}, Stanford RW \cite{stanford-rw}, Mturk-287 \cite{mrutk-287}, Mturk-771 \cite{mturk-771}, SimVerb-3500 \cite{gerz-etal-2016-simverb} を用いた. 
 ただし, 各データセットの特徴に関しての詳細はそれぞれの文献を参照してもらいたい. 
 また, WordSim-353 は関連する単語組で構成されるサブセットである WS-353 (Rel) と類似する単語組で構成されるサブセットである WS-353 (Sim) も用いた. 
 
-\begin{itemize}
-  \item Simlex-999 \cite{simlex999}
-  \item WordSim-353 \cite{wordsim353}
-  \item YP-130 \cite{yp-130}
-  \item MEN \cite{men}
-  \item MC-30 \cite{mc-30}
-  \item RG-65 \cite{rg-65}
-  \item VERB-143 \cite{verb-143}
-  \item Stanford RW \cite{stanford-rw}
-  \item Mturk-287 \cite{mrutk-287}
-  \item Mturk-771 \cite{mturk-771}
-  \item SimVerb-3500 \cite{gerz-etal-2016-simverb}
-\end{itemize}
-
-% \subsubsection{SimLex-999}
-% SimLex-999 \cite{simlex999} は Hill Felix らによって発表された英語の 999 組の単語間の関連性ではなく類似性に基づいて, 単語間の類似度を 0 から 10 の範囲で定量化したデータセットである. 
-
-% \subsubsection{WordSim-353}
-% WordSim-353 \cite{wordsim353} は Finkelstein Lev らによって作成された英語の 350 個の単語組をその関係度で 0 から 10 の範囲で評価したデータセットである.
-% このデータセットでは関連性と類似性による評価が混在しており, 関連する 252 単語組のサブセットである　WS-353(Rel) と 類似する 203 単語組のサブセットである WS-353(Sim) がある.
-
-% \subsubsection{YP-130}
-% YP-130 は () らによって作成された英語の動詞の 130 個の単語組についての類似性を 0 から 4 の範囲で評価したデータセットである. 
-
-% \subsubsection{MEN}
-% MEN は　() らによって作成された画像情報なども活用して英単語 3000 組についての意味的類似性を から の範囲で付与したデータセットである. 
-
-% \subsubsection{MC-30}
-
-% \subsubsection{RG-65}
-
-% \subsubsection{VERB-143}
-
-% \subsubsection{Stanford RW}
-
-% \subsubsection{Mturk-287}
-
-% \subsubsection{Mturk-771}
-
 \section{実験}
-Word2Box の著者による実装 \url{https://github.com/iesl/word2box} を用いて表 \ref{tb:model_parameter} のパラメータで Penn Treebank コーパスから単語の埋め込みモデルを獲得をした. 
+Word2Box の著者による実装\footnote{\url{https://github.com/iesl/word2box}}を用いて Penn Treebank コーパスから単語の埋め込みモデルを獲得をした. 
+表 \ref{tb:model_parameter} にモデルの学習パラメータを示す. 
 各単語類似度データセットをもとに類似度の高い単語の組について埋め込み表現同士での類似度を計算し, それぞれの単語においてもう一方の単語が類似度で学習した語彙の中で何番目に位置するかを求めた. 
-各類似度データセットは数値の基準がそれぞれ異なるため, 表 \ref{tb:dataset_detail} に示す基準値を上回る単語組を実験に用いた. 
+各類似度データセットは数値の基準がそれぞれ異なるため, 基準値を上回る単語組を実験に用いた. 
+表 \ref{tb:dataset_detail} に各データセットに対して定めた基準値を示す. 
 ただし, 基準値は各データセットの類似度の最大値の 80 \% としている. 
 求めた結果から Word2Box が 2 単語間の類似性を適切に学習し Box Embedding で表現できているかを確認した. 
 
@@ -187,14 +150,13 @@ Word2Box の著者による実装 \url{https://github.com/iesl/word2box} を用�
 \end{table*}
 
 \section{結果と考察}
-実験結果は表 \ref{tb:result} のようになった. 
-どのデータセットにおいても類似度が 1 から 99 番目に含まれる類似単語のペアはほとんど存在しなかった. 
-それどころか上位 1000 番目までに含まれる類似単語ペアの割合は少数であった. 
-また, 表 \ref{tb:rankdiff} のようにデータセットの種類にかかわらずほとんどの単語ペアにおいて類似度の順位を求める対象単語を入れ替えると順位が大きく変動することが確認された. 
-ただし, ここで大きく変動したとする基準は順位が 1000 異なる場合とした. 
-この大きく変動する組においても単語組が類似性を示す結果とはならなかった. 
+表 \ref{tb:result} に実験結果を示す. 
+どのデータセットにおいても類似度が 1 から 99 番目に含まれる類似単語のペアはほとんど存在せず, 上位 1000 番目まででも含まれる類似単語ペアの割合は少数となった. 
+% また, 表 \ref{tb:rankdiff} のようにデータセットの種類にかかわらずほとんどの単語ペアにおいて類似度の順位を求める対象単語を入れ替えると順位が大きく変動することが確認された. 
+% ただし, ここで大きく変動したとする基準は順位が 1000 異なる場合とした. 
+% この大きく変動する組においても単語組が類似性を示す結果とはならなかった. 
 
-次に類似度の順位が 1 から 99 番目に含まれていた単語組を表 \ref{tb:sim_words} に示す. 
+続いて表 \ref{tb:sim_words} に類似度の順位が 1 から 99 番目に含まれていた単語組を示す. 
 含まれていた単語組と含まれなかった単語組との間に使われる文脈や意味において法則性を見出すことはできなかった. 
 また, データセット間での特徴や法則性も見受けられなかった. 
 
@@ -220,28 +182,28 @@ Word2Box の著者による実装 \url{https://github.com/iesl/word2box} を用�
   \end{tabular}
 \end{table}
 
-\begin{table}[th]
-  \centering
-  \caption{対象単語入れ替えによる順位変動}
-  \label{tb:rankdiff}
-  \begin{tabular}{c|c|c}
-    \hline
-    データセット       & 変動が大きい組 & 組の総数 \\ \hline \hline
-    Stanford RW  & 28      & 36   \\
-    RG-65        & 4       & 4    \\
-    YP-130       & 9       & 12   \\
-    MEN          & 123     & 166  \\
-    MC-30        & 3       & 3    \\
-    Mturk-287    & 14      & 20   \\
-    SimVerb-3500 & 847     & 1053 \\
-    SimLex-999   & 54      & 68   \\
-    Mturk-771    & 53      & 85   \\
-    WS-353(Sim)  & 14      & 16   \\
-    WS-353(All)  & 24      & 31   \\
-    WS-353(Rel)  & 10      & 14   \\
-    VERB-143     & 0       & 0    \\ \hline
-  \end{tabular}
-\end{table}
+% \begin{table}[th]
+%   \centering
+%   \caption{対象単語入れ替えによる順位変動}
+%   \label{tb:rankdiff}
+%   \begin{tabular}{c|c|c}
+%     \hline
+%     データセット       & 変動が大きい組 & 組の総数 \\ \hline \hline
+%     Stanford RW  & 28      & 36   \\
+%     RG-65        & 4       & 4    \\
+%     YP-130       & 9       & 12   \\
+%     MEN          & 123     & 166  \\
+%     MC-30        & 3       & 3    \\
+%     Mturk-287    & 14      & 20   \\
+%     SimVerb-3500 & 847     & 1053 \\
+%     SimLex-999   & 54      & 68   \\
+%     Mturk-771    & 53      & 85   \\
+%     WS-353(Sim)  & 14      & 16   \\
+%     WS-353(All)  & 24      & 31   \\
+%     WS-353(Rel)  & 10      & 14   \\
+%     VERB-143     & 0       & 0    \\ \hline
+%   \end{tabular}
+% \end{table}
 
 \begin{table*}[th]
   \centering
@@ -250,13 +212,13 @@ Word2Box の著者による実装 \url{https://github.com/iesl/word2box} を用�
   \begin{tabular}{c|c}
     \hline
     データセット       & 類似単語組    \\ \hline \hline
-    MEN          & flight plane, highway traffic, cold frozen, mountain valley, bay beach, burger meat  \\ \hline
-    SimVerb-3500 & \begin{tabular}[c]{@{}c@{}}let release, tell testify,release go, express tell, save rescue, release relax, tell predict,\\  spend use, say tell, tell respond, fight defend, rescue help, leave release, release drain,\\  release loosen, remove release, rescue find, gamble bet, gamble risk\end{tabular} \\ \hline
-    SimLex-999   & essential necessary, area zone, pact agreement, physician doctor, expand grow  \\ \hline
-    Mturk-771    & season winter \\ \hline
-    WS-353(All)  & king queen, opec oil \\ \hline
-    WS-353(Rel)  & opec oil    \\ \hline
-    WS-353(Sim)  & king queen   \\ \hline
+    MEN          & (flight, plane), (highway, traffic), (cold, frozen), (mountain valley), (bay, beach), (burger, meat)  \\ \hline
+    SimVerb-3500 & \begin{tabular}[c]{@{}c@{}}(let, release), (tell, testify), (release, go), (express, tell), (save, rescue), (release, relax), (tell, predict),\\  (spend, use), (say, tell), (tell, respond), (fight, defend), (rescue, help), (leave, release), (release, drain),\\  (release, loosen), (remove, release), (rescue, find), (gamble, bet), (gamble, risk)\end{tabular} \\ \hline
+    SimLex-999   & (essential, necessary), (area, zone), (pact, agreement), (physician, doctor), (expand, grow)  \\ \hline
+    Mturk-771    & (season, winter) \\ \hline
+    WS-353(All)  & (king, queen), (opec, oil) \\ \hline
+    WS-353(Rel)  & (opec, oil)    \\ \hline
+    WS-353(Sim)  & (king, queen)   \\ \hline
   \end{tabular}
 \end{table*}
 
