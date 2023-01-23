@@ -53,20 +53,20 @@
 
 \section{はじめに}
 深層学習など機械学習による自然言語処理は盛んな研究分野の一つである. 
-自然言語処理はもちろん機械学習においても単語の表現や処理方法は文章の意味を計算によって解析するために必要かつ根幹的な要素である.
-近年, Word2Vec のような単語の分散表現ベクトルが広く使われる一方で単語の意味で表現しきれない要素があることが認識されている. 
-その代表例として点でしかデータを表すことができないというものがある. 
-単語の埋め込みにおいてこのことは単語の意味の包含関係や階層関係といった集合的性質を自然に表現できないということに起因する. 
+自然言語処理はもちろん機械学習においても, 単語の表現や処理方法は文章の意味を計算によって解析するために必要かつ根幹的な要素である.
+近年, Word2Vec のような単語の分散表現ベクトルが広く使われる一方で, 単語の意味で表現しきれない要素があることが認識されている. 
+その代表例として, ベクトルの表現では点でしかデータを表すことができないというものがある. 
+このことは単語の埋め込みにおいて単語の意味の包含関係や階層関係といった集合的性質を自然に表現できないということに原因がある. 
 このような問題を解決するための表現として領域表現が提案されている. 
 本実験では始点と終点の組で表される「箱」への単語埋め込み表現である Box Embedding を扱う. 
 
-Box Embedding の獲得手法の一つである Word2Box による単語埋め込み表現を獲得し, その埋め込み表現が単語間の意味をどのように表しているかを実験により確認した. 
+Box Embedding の獲得手法の一つである Word2Box により単語埋め込み表現を獲得し, その埋め込み表現が単語間の意味をどのように表しているかを実験により確認した. 
 
 \section{要素技術}
 \subsection{Box Embedding}
 Box Embedding は d 次元のベクトルの組からなる「箱」の領域で単語を表現するものであり, Vilnis Luke ら\cite{box-lattice}によって提案された. 
 図 \ref{fig:box_embedding2d} に Box Embedding の例を示す. 
-図 \ref{fig:box_embedding2d} では mammal と carnivore の「箱」の共有部分にて cat の「箱」が存在するように, Box Embedding では「箱」同士の重なりによって単語の意味の包含関係や階層関係を表現する. 
+図 \ref{fig:box_embedding2d} では mammal (哺乳類) と carnivore (肉食獣) の「箱」の共有部分にて cat (猫) の「箱」が存在するように, Box Embedding では「箱」同士の重なりによって単語の意味の包含関係や階層関係を表現する. 
 
 Box Embedding は「箱」の重なりを調整することで表現を獲得する. しかし, Vilnis Luke らによって提案された方法では「箱」が重ならないと勾配が計算できず最適化が難しくなる問題がある.
 この問題に対して「箱」の境界を滑らかだとして領域を計算することで「箱」同士が離れていても勾配を求められ最適化できる. 
@@ -75,16 +75,16 @@ Gumbel 分布を適用することで「箱」をうまく最適化すること�
 
 \begin{figure}[t]
   \centering
-  \caption{2 次元での Box Embedding の例 (文献 \cite{li2018smoothing} の Figure 1 から引用)}
   \label{fig:box_embedding2d}
   \includegraphics[width=70mm]{BoxEmbedding_2d.png}
+  \caption{2 次元での Box Embedding の例 (文献 \cite{li2018smoothing} の Figure 1 から引用)}
 \end{figure}
 
 \begin{figure}[t]
   \centering
-  \caption{2 次元での Gumbel Box の例 (文献 \cite{pmlr-v161-boratko21a} の Figure 3 から引用)}
   \label{fig:gumbel_box}
   \includegraphics[width=70mm]{GumbelBoxes.png}
+  \caption{2 次元での Gumbel Box の例 (文献 \cite{pmlr-v161-boratko21a} の Figure 3 から引用)}
 \end{figure}
 
 % \subsection{Word2Vec}
@@ -95,13 +95,13 @@ Gumbel 分布を適用することで「箱」をうまく最適化すること�
 \subsection{Word2Box}
 Word2Box \cite{dasgupta-etal-2022-word2box} は Sankar Dasgupta らによって提案された手法であり, 単語の領域表現の Box Embedding を教師なし学習で獲得するものである. 
 学習方法は Word2Vec \cite{word2vec} と同様で, 似た意味の単語は似た文脈に現れるという仮説をもとに対象単語とその周辺単語の関係を学習することで獲得する. 
-また, 今回の実験では CBOW モデルのように対象の単語とその周辺単語との「箱」同士の重なりが大きくなるように学習する. 
-加えて, 「箱」をただ大きくする最適化にならないように適当な語を負例として抽出し周辺単語との重なりを小さくなるように学習もする. 
+また, 本実験では CBOW モデルのように対象の単語とその周辺単語との「箱」同士の重なりが大きくなるように学習する. 
+加えて, 「箱」をただ大きくする最適化にならないように適当な語を負例として抽出し周辺単語との重なりを小さくなるように学習する. 
 
 \section{データセット}
 \subsection{Penn Treebank データセット}
 Penn Treebank データセット \cite{ptb} は 	Mitchell P. Marcus らによって作成された 450 万語を超える大規模英語コーパスであり, コーパスには品詞情報も付加されている. 
-この実験では数字を全て ``N'' , 語彙に含まれない単語を ``\textless unk\textgreater'' , パディングを ``\textless pad\textgreater'' としてそれぞれ一つの単語と見なして語彙数が 1 万語になるように調整されたものを用いた.
+本実験では数字を全て ``N'' , 語彙に含まれない単語を ``\textless unk\textgreater'' , パディングを ``\textless pad\textgreater'' としてそれぞれ一つの単語と見なして語彙数が 1 万語になるように調整されたものを用いた.
 
 \subsection{単語類似度データセット}
 実験で単語の類似性を確かめるために単語類似度データセットとして Simlex-999 \cite{simlex999}, WordSim-353 \cite{wordsim353}, YP-130 \cite{yp-130}, MEN \cite{men}, MC-30 \cite{mc-30}, RG-65 \cite{rg-65}, VERB-143 \cite{verb-143}, Stanford RW \cite{stanford-rw}, Mturk-287 \cite{mrutk-287}, Mturk-771 \cite{mturk-771}, SimVerb-3500 \cite{gerz-etal-2016-simverb} を用いた. 
@@ -110,8 +110,10 @@ Penn Treebank データセット \cite{ptb} は 	Mitchell P. Marcus らによっ
 
 \section{実験}
 Word2Box による Box Embedding が 単語の意味関係を獲得できているかの確認を目的として, Word2Box で学習したモデルで類似単語組の類似度による順位を求めた. 
-Word2Box の著者による実装\footnote{\url{https://github.com/iesl/word2box}}を用いて Penn Treebank コーパスから単語の埋め込みモデルを獲得をした. 
+Word2Box の著者による実装\footnote[1]{\url{https://github.com/iesl/word2box}}を用いて Penn Treebank コーパスから単語の埋め込みモデルを獲得をした. 
 表 \ref{tb:model_parameter} に埋め込み表現を学習する際のモデルの学習パラメータを示す. 
+パラメータは Word2Box の論文 \cite{dasgupta-etal-2022-word2box} と著者による実装のサンプルに基づいて決定した. 
+
 各単語類似度データセットをもとに類似度の高い単語の組について埋め込み表現同士での類似度を計算し, それぞれの単語においてもう一方の単語が類似度で学習した語彙の中で上位何番目に位置するかを求めた. 
 各類似度データセットは数値の基準がそれぞれ異なるため, 基準値を上回る単語組を実験に用いた. 
 表 \ref{tb:dataset_detail} に各データセットに対して定めた基準値を示す. 
@@ -128,7 +130,7 @@ Word2Box の著者による実装\footnote{\url{https://github.com/iesl/word2box
       バッチサイズ&4096 \\ 
       エポック数&10 \\
       ウィンドウサイズ&5 \\
-      ネガティブサンプル数&2 \\
+      負例サンプル数&2 \\
       サブサンプル閾値&0.001 \\
       学習率&0.004204091643267762 \\
       \hline
@@ -161,7 +163,7 @@ Word2Box の著者による実装\footnote{\url{https://github.com/iesl/word2box
 含まれていた単語組と含まれなかった単語組との間に使われる文脈や意味において法則性を見出すことはできなかった. 
 また, データセット間での特徴や法則性も見受けられなかった. 
 
-以上よりこの実験において Word2Box は単語同士の関係を適切に表現する Box Embedding を獲得していないように考えられる. 
+以上よりこの実験において Word2Box で学習した Box Embedding が表現できている類似単語組の関係は限定された範囲に留まっている. 
 
 \begin{table}[th]
   \caption{類似単語ペアが含まれる順位}
@@ -226,7 +228,8 @@ Word2Box の著者による実装\footnote{\url{https://github.com/iesl/word2box
 \end{table*}
 
 \section{今後の課題}
-今回の実験結果は Word2Box によって獲得した Box Embedding について意味が近い単語間では似た分散表現になるという性質を示しておらず, その点において十分な表現能力があることを確認できなかった. 
+本実験では　Word2Box による Box Embedding が単語間の意味関係を表現できているのかの確認を目的として, 類似単語組に対する学習したモデルによる類似度順位の検証に取り組んだ. 
+結果として Word2Box によって獲得した Box Embedding は意味が近い単語同士で似た分散表現になるという性質を限定的に示すにとどまった, その点において十分な表現能力があることを確認できなかった. 
 提案論文 \cite{dasgupta-etal-2022-word2box} において学習パラメータはいくつかの数値からランダムに選択することで決定し, 実験とは異なる学習データを用いているため, 学習パラメータの調整や学習用の文章の変更によって性能の向上の可能性を模索する余地があると考えられる. 
 加えて今回は Word2Vec に代表されるようなベクトル埋め込み表現と Word2Box の性能差を確かめる実験ができなかったが他の領域埋め込み手法も加えて表現能力の比較検証の必要がある. 
 同じように今回検証できなかった Box Embedding による単語の意味の階層関係や包含関係の表現も確認したい. 
