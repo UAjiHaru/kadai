@@ -75,14 +75,14 @@ Gumbel 分布を適用することで「箱」をうまく最適化すること�
 
 \begin{figure}[t]
   \centering
-  \caption{2 次元での Box Embedding の例 (文献 \cite{li2018smoothing} Figure 1 引用)}
+  \caption{2 次元での Box Embedding の例 (文献 \cite{li2018smoothing} の Figure 1 から引用)}
   \label{fig:box_embedding2d}
   \includegraphics[width=70mm]{BoxEmbedding_2d.png}
 \end{figure}
 
 \begin{figure}[t]
   \centering
-  \caption{2 次元での Gumbel Box の例 (文献 \cite{pmlr-v161-boratko21a} Figure 3 引用)}
+  \caption{2 次元での Gumbel Box の例 (文献 \cite{pmlr-v161-boratko21a} の Figure 3 から引用)}
   \label{fig:gumbel_box}
   \includegraphics[width=70mm]{GumbelBoxes.png}
 \end{figure}
@@ -101,21 +101,22 @@ Word2Box \cite{dasgupta-etal-2022-word2box} は Sankar Dasgupta らによって�
 \section{データセット}
 \subsection{Penn Treebank データセット}
 Penn Treebank データセット \cite{ptb} は 	Mitchell P. Marcus らによって作成された 450 万語を超える大規模英語コーパスであり, コーパスには品詞情報も付加されている. 
-この実験では数字を全て `N' , 語彙に含まれない単語を ``\textless unk\textgreater'' , パディングを ``\textless pad\textgreater'' としてそれぞれ一つの単語と見なして語彙数が 1 万語になるように調整されたものを用いた.
+この実験では数字を全て ``N'' , 語彙に含まれない単語を ``\textless unk\textgreater'' , パディングを ``\textless pad\textgreater'' としてそれぞれ一つの単語と見なして語彙数が 1 万語になるように調整されたものを用いた.
 
 \subsection{単語類似度データセット}
-実験で単語の類似性を確かめるために単語類似度データセットとして Simlex-999 \cite{simlex999} と WordSim-353 \cite{wordsim353}, YP-130 \cite{yp-130}, MEN \cite{men}, MC-30 \cite{mc-30}, RG-65 \cite{rg-65}, VERB-143 \cite{verb-143}, Stanford RW \cite{stanford-rw}, Mturk-287 \cite{mrutk-287}, Mturk-771 \cite{mturk-771}, SimVerb-3500 \cite{gerz-etal-2016-simverb} を用いた. 
+実験で単語の類似性を確かめるために単語類似度データセットとして Simlex-999 \cite{simlex999}, WordSim-353 \cite{wordsim353}, YP-130 \cite{yp-130}, MEN \cite{men}, MC-30 \cite{mc-30}, RG-65 \cite{rg-65}, VERB-143 \cite{verb-143}, Stanford RW \cite{stanford-rw}, Mturk-287 \cite{mrutk-287}, Mturk-771 \cite{mturk-771}, SimVerb-3500 \cite{gerz-etal-2016-simverb} を用いた. 
 ただし, 各データセットの特徴に関しての詳細はそれぞれの文献を参照してもらいたい. 
 また, WordSim-353 は関連する単語組で構成されるサブセットである WS-353 (Rel) と類似する単語組で構成されるサブセットである WS-353 (Sim) も用いた. 
 
 \section{実験}
+Word2Box による Box Embedding が 単語の意味関係を獲得できているかの確認を目的として, Word2Box で学習したモデルで類似単語組の類似度による順位を求めた. 
 Word2Box の著者による実装\footnote{\url{https://github.com/iesl/word2box}}を用いて Penn Treebank コーパスから単語の埋め込みモデルを獲得をした. 
-表 \ref{tb:model_parameter} にモデルの学習パラメータを示す. 
-各単語類似度データセットをもとに類似度の高い単語の組について埋め込み表現同士での類似度を計算し, それぞれの単語においてもう一方の単語が類似度で学習した語彙の中で何番目に位置するかを求めた. 
+表 \ref{tb:model_parameter} に埋め込み表現を学習する際のモデルの学習パラメータを示す. 
+各単語類似度データセットをもとに類似度の高い単語の組について埋め込み表現同士での類似度を計算し, それぞれの単語においてもう一方の単語が類似度で学習した語彙の中で上位何番目に位置するかを求めた. 
 各類似度データセットは数値の基準がそれぞれ異なるため, 基準値を上回る単語組を実験に用いた. 
 表 \ref{tb:dataset_detail} に各データセットに対して定めた基準値を示す. 
 ただし, 基準値は各データセットの類似度の最大値の 80 \% としている. 
-求めた結果から Word2Box が 2 単語間の類似性を適切に学習し Box Embedding で表現できているかを確認した. 
+得られた結果から Word2Box が 2 単語間の類似性を適切に学習し Box Embedding で表現できているかを確認した. 
 
 \begin{table}[th]
   \centering
@@ -151,7 +152,7 @@ Word2Box の著者による実装\footnote{\url{https://github.com/iesl/word2box
 
 \section{結果と考察}
 表 \ref{tb:result} に実験結果を示す. 
-どのデータセットにおいても類似度が 1 から 99 番目に含まれる類似単語のペアはほとんど存在せず, 上位 1000 番目まででも含まれる類似単語ペアの割合は少数となった. 
+どのデータセットにおいても類似度が上位 1 から 99 番目に含まれる類似単語のペアはほとんど存在せず, 上位 1000 番目まででも含まれる類似単語ペアの割合は少数となった. 
 % また, 表 \ref{tb:rankdiff} のようにデータセットの種類にかかわらずほとんどの単語ペアにおいて類似度の順位を求める対象単語を入れ替えると順位が大きく変動することが確認された. 
 % ただし, ここで大きく変動したとする基準は順位が 1000 異なる場合とした. 
 % この大きく変動する組においても単語組が類似性を示す結果とはならなかった. 
@@ -159,6 +160,8 @@ Word2Box の著者による実装\footnote{\url{https://github.com/iesl/word2box
 続いて表 \ref{tb:sim_words} に類似度の順位が 1 から 99 番目に含まれていた単語組を示す. 
 含まれていた単語組と含まれなかった単語組との間に使われる文脈や意味において法則性を見出すことはできなかった. 
 また, データセット間での特徴や法則性も見受けられなかった. 
+
+以上よりこの実験において Word2Box は単語同士の関係を適切に表現する Box Embedding を獲得していないように考えられる. 
 
 \begin{table}[th]
   \caption{類似単語ペアが含まれる順位}
@@ -226,6 +229,7 @@ Word2Box の著者による実装\footnote{\url{https://github.com/iesl/word2box
 今回の実験結果は Word2Box によって獲得した Box Embedding について意味が近い単語間では似た分散表現になるという性質を示しておらず, その点において十分な表現能力があることを確認できなかった. 
 提案論文 \cite{dasgupta-etal-2022-word2box} において学習パラメータはいくつかの数値からランダムに選択することで決定し, 実験とは異なる学習データを用いているため, 学習パラメータの調整や学習用の文章の変更によって性能の向上の可能性を模索する余地があると考えられる. 
 加えて今回は Word2Vec に代表されるようなベクトル埋め込み表現と Word2Box の性能差を確かめる実験ができなかったが他の領域埋め込み手法も加えて表現能力の比較検証の必要がある. 
+同じように今回検証できなかった Box Embedding による単語の意味の階層関係や包含関係の表現も確認したい. 
 また, 日本語のデータに対して Word2Box と　Box Embedding を適用した場合においても意味の包含関係や階層関係が表現されるのかを確認したい. 
 
 \bibliography{index}		%文献データベースindex.bibを使用する
