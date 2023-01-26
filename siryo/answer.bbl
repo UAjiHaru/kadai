@@ -102,20 +102,19 @@ Thang Luong, Richard Socher, and Christopher Manning.
   Association for Computational Linguistics.
 
 \bibitem{mrutk-287}
-Thang Luong, Richard Socher, and Christopher Manning.
-\newblock Better word representations with recursive neural networks for
-  morphology.
-\newblock In {\em Proceedings of the Seventeenth Conference on Computational
-  Natural Language Learning}, pp. 104--113, Sofia, Bulgaria, August 2013.
-  Association for Computational Linguistics.
+Kira Radinsky, Eugene Agichtein, Evgeniy Gabrilovich, and Shaul Markovitch.
+\newblock A word at a time: Computing word relatedness using temporal semantic
+  analysis.
+\newblock In {\em Proceedings of the 20th International Conference on World
+  Wide Web}, WWW '11, p. 337^^e2^^80^^93346, New York, NY, USA, 2011.
+  Association for Computing Machinery.
 
 \bibitem{mturk-771}
-Thang Luong, Richard Socher, and Christopher Manning.
-\newblock Better word representations with recursive neural networks for
-  morphology.
-\newblock In {\em Proceedings of the Seventeenth Conference on Computational
-  Natural Language Learning}, pp. 104--113, Sofia, Bulgaria, August 2013.
-  Association for Computational Linguistics.
+Guy Halawi, Gideon Dror, Evgeniy Gabrilovich, and Yehuda Koren.
+\newblock Large-scale learning of word relatedness with constraints.
+\newblock In {\em Proceedings of the 18th ACM SIGKDD International Conference
+  on Knowledge Discovery and Data Mining}, KDD '12, p. 1406^^e2^^80^^931414,
+  New York, NY, USA, 2012. Association for Computing Machinery.
 
 \bibitem{gerz-etal-2016-simverb}
 Daniela Gerz, Ivan Vuli{\'c}, Felix Hill, Roi Reichart, and Anna Korhonen.
